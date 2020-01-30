@@ -21,15 +21,7 @@ def index():
 
   else:
     tasks = Todo.query.order_by(Todo.date_created).all()
-    # print('TASKS', tasks)
-    # pprint.pprint(tasks)
-    # resp_body = {
-    #   "tasks" : tasks
-    # }
-    # d = dict(tasks.tasks())
-    # resp = jsonify(resp_body)
-    return json.dumps(tasks)
-    # return 'sd'
+    return str(tasks)
 
 @mod_one.route('/delete/<int:id>')
 def delete(id):
